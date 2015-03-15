@@ -605,6 +605,14 @@ bool BulletPhysics::SetParam(const std::string &_key, const boost::any &_value)
 }
 
 //////////////////////////////////////////////////
+boost::any BulletPhysics::GetParam(const std::string &_key) const
+{
+  boost::any value;
+  this->GetParam(_key, value);
+  return value;
+}
+
+//////////////////////////////////////////////////
 bool BulletPhysics::GetParam(const std::string &_key, boost::any &_value) const
 {
   sdf::ElementPtr bulletElem = this->sdf->GetElement("bullet");
@@ -637,12 +645,9 @@ bool BulletPhysics::GetParam(const std::string &_key, boost::any &_value) const
     _value = this->sdf->GetElement("max_contacts")->Get<int>();
   else if (_key == "min_step_size")
     _value = bulletElem->GetElement("solver")->Get<double>("min_step_size");
-  else if (_key == "max_step_size")
-    _value = this->GetMaxStepSize();
   else
   {
-    gzwarn << _key << " is not supported in bullet" << std::endl;
-    return false;
+    return PhysicsEngine::GetParam(_key, _value);
   }
   return true;
 }

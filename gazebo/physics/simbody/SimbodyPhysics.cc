@@ -1340,16 +1340,19 @@ std::string SimbodyPhysics::GetTypeString(unsigned int _type)
 }
 
 //////////////////////////////////////////////////
+boost::any SimbodyPhysics::GetParam(const std::string &_key) const
+{
+  boost::any value;
+  this->GetParam(_key, value);
+  return value;
+}
+
+//////////////////////////////////////////////////
 bool SimbodyPhysics::GetParam(const std::string &_key, boost::any &_value) const
 {
-  if (_key == "type")
+  if (_key == "solver_type")
   {
-    gzwarn << "Please use keyword `solver_type` in the future.\n";
-    return this->GetParam("solver_type", _value);
-  }
-  else if (_key == "solver_type")
-  {
-    _value = "Spatial Algebra and Elastic Foundation";
+    _value = std::string("Spatial Algebra and Elastic Foundation");
   }
   else if (_key == "integrator_type")
   {
@@ -1366,15 +1369,9 @@ bool SimbodyPhysics::GetParam(const std::string &_key, boost::any &_value) const
   {
     _value = this->contact.getTransitionVelocity();
   }
-  else if (_key == "max_step_size")
-  {
-    _value = this->GetMaxStepSize();
-  }
   else
   {
-    gzwarn << "key [" << _key
-           << "] not supported, returning (int)0." << std::endl;
-    return false;
+    return PhysicsEngine::GetParam(_key, _value);
   }
   return true;
 }
