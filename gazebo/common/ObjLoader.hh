@@ -18,6 +18,7 @@
 #ifndef GAZEBO_COMMON_OBJLOADER_HH_
 #define GAZEBO_COMMON_OBJLOADER_HH_
 
+#include <string>
 #include <memory>
 
 #include "gazebo/common/MeshLoader.hh"

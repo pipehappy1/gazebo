@@ -74,8 +74,9 @@ Mesh *ObjLoader::Load(const std::string &_filename)
     gzerr << err << std::endl;
   }
 
-  if (!ret) {
-    gzerr << "Failed to load/parse .obj." << std::endl;;
+  if (!ret)
+  {
+    gzerr << "Failed to load/parse .obj." << std::endl;
     return nullptr;
   }
 
