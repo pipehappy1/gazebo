@@ -31,6 +31,7 @@
 #include "gazebo/common/ColladaLoader.hh"
 #include "gazebo/common/ColladaExporter.hh"
 #include "gazebo/common/STLLoader.hh"
+#include "gazebo/common/ObjLoader.hh"
 #include "gazebo/gazebo_config.h"
 
 #ifdef HAVE_GTS
@@ -49,6 +50,7 @@ MeshManager::MeshManager()
   this->colladaLoader = new ColladaLoader();
   this->colladaExporter = new ColladaExporter();
   this->stlLoader = new STLLoader();
+  this->objLoader.reset(new ObjLoader());
 
   // Create some basic shapes
   this->CreatePlane("unit_plane",
@@ -74,6 +76,7 @@ MeshManager::MeshManager()
 
   this->fileExtensions.push_back("stl");
   this->fileExtensions.push_back("dae");
+  this->fileExtensions.push_back("obj");
 }
 
 //////////////////////////////////////////////////
@@ -130,6 +133,8 @@ const Mesh *MeshManager::Load(const std::string &_filename)
       loader = this->stlLoader;
     else if (extension == "dae")
       loader = this->colladaLoader;
+    else if (extension == "obj")
+      loader = this->objLoader.get();
     else
       gzerr << "Unsupported mesh format for file[" << _filename << "]\n";
 

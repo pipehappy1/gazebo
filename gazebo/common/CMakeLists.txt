@@ -2,6 +2,9 @@ include (${gazebo_cmake_dir}/GazeboUtils.cmake)
 
 add_definitions(-DBUILDING_DLL_GZ_COMMON)
 
+# tiny obj loader
+include_directories(SYSTEM ${CMAKE_SOURCE_DIR}/deps/tinyobjloader)
+
 if (HAVE_OPENAL)
   include_directories(${OPENAL_INCLUDE_DIR})
 endif()
@@ -55,6 +58,7 @@ set (sources
   MeshManager.cc
   ModelDatabase.cc
   MouseEvent.cc
+  ObjLoader.cc
   PID.cc
   SemanticVersion.cc
   SkeletonAnimation.cc
@@ -109,6 +113,7 @@ set (headers
   MeshManager.hh
   ModelDatabase.hh
   MouseEvent.hh
+  ObjLoader.hh
   PID.hh
   Plugin.hh
   SemanticVersion.hh
@@ -147,6 +152,7 @@ set (gtest_sources
   MeshManager_TEST.cc
   MouseEvent_TEST.cc
   MovingWindowFilter_TEST.cc
+  ObjLoader_TEST.cc
   SemanticVersion_TEST.cc
   SphericalCoordinates_TEST.cc
   SystemPaths_TEST.cc

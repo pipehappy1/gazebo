@@ -18,6 +18,7 @@
 #define _GAZEBO_MESHMANAGER_HH_
 
 #include <map>
+#include <memory>
 #include <utility>
 #include <string>
 #include <vector>
@@ -44,6 +45,7 @@ namespace gazebo
     class ColladaLoader;
     class ColladaExporter;
     class STLLoader;
+    class ObjLoader;
     class Mesh;
     class Plane;
     class SubMesh;
@@ -275,6 +277,9 @@ namespace gazebo
 
       /// \brief 3D mesh loader for STL files
       private: STLLoader *stlLoader;
+
+      /// \brief 3D mesh loader for OBJ files
+      private: std::unique_ptr<ObjLoader> objLoader;
 
       /// \brief Dictionary of meshes, indexed by name
       private: std::map<std::string, Mesh*> meshes;
