@@ -70,10 +70,14 @@ dxJointGearbox::getInfo2( dxJoint::Info2* info )
     dJointSetGearboxReferenceBody1(this, refBody1);
     dJointSetGearboxReferenceBody2(this, refBody2);
 
+    std::cerr << "gearbox error" << std::endl;
+    printf("  ax1(%f,%f,%f) ax2(%f,%f,%f)\n",
+      globalAxis1[0], globalAxis1[1], globalAxis1[2],
+      globalAxis2[0], globalAxis2[1], globalAxis2[2]);
     double ang1 = getHingeAngle(refBody1,node[0].body,globalAxis1,qrel1);
     double ang2 = getHingeAngle(refBody2,node[1].body,globalAxis2,qrel2);
-    // printf("a1(%f) a10(%f) a2(%f) a20(%f)\n",
-    //   ang1, cumulative_angle1, ang2, cumulative_angle2);
+    printf("  a1(%f) a10(%f) a2(%f) a20(%f)\n",
+      ang1, cumulative_angle1, ang2, cumulative_angle2);
 
     cumulative_angle1 = dShortestAngularDistanceUpdate(cumulative_angle1,ang1);
     cumulative_angle2 = dShortestAngularDistanceUpdate(cumulative_angle2,ang2);
@@ -83,8 +87,8 @@ dxJointGearbox::getInfo2( dxJoint::Info2* info )
 
     // FIXME: error calculation is not amenable to reset of poses,
     // cumulative angles might snap to wrong angular value.
-    // printf("a1(%f) a1f(%f) a2(%f) a2f(%f) e(%f)\n",
-    //   ang1, cumulative_angle1, ang2, cumulative_angle2, err);
+    printf("  a1(%f) a1f(%f) a2(%f) a2f(%f) e(%f)\n",
+      ang1, cumulative_angle1, ang2, cumulative_angle2, err);
 
     info->J1a[0] = globalAxis1[0];
     info->J1a[1] = globalAxis1[1];
