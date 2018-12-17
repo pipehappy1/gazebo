@@ -258,6 +258,12 @@ MisalignmentPlugin::MisalignmentPlugin() : WorldPlugin(),
 }
 
 /////////////////////////////////////////////////
+MisalignmentPlugin::~MisalignmentPlugin()
+{
+  this->Fini();
+}
+
+/////////////////////////////////////////////////
 void MisalignmentPlugin::Load(physics::WorldPtr _world, sdf::ElementPtr _sdf)
 {
   gzmsg << "Loading MisalignmentPlugin\n";
@@ -345,4 +351,16 @@ void MisalignmentPlugin::Load(physics::WorldPtr _world, sdf::ElementPtr _sdf)
     msg->set_data(1);
     this->dataPtr->Enable(msg);
   }
+}
+
+/////////////////////////////////////////////////
+void MisalignmentPlugin::Fini()
+{
+  this->dataPtr->updateConnection.reset();
+  this->dataPtr->enableGzSub.reset();
+  this->dataPtr->gzNode->Fini();
+  this->dataPtr->pubMisalignment.reset();
+  this->dataPtr->pubDbgRefPose.reset();
+  this->dataPtr->pubDbgTgtPose.reset();
+  this->dataPtr->world.reset();
 }

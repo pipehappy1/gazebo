@@ -63,7 +63,13 @@ namespace gazebo
     public: MisalignmentPlugin();
 
     // Documentation inherited
+    public: ~MisalignmentPlugin();
+
+    // Documentation inherited
     public: void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf) override;
+
+    // \brief Finalize the plugin
+    private: void Fini();
 
     /// \brief Pointer to private data
     private: std::unique_ptr<MisalignmentPluginPrivate> dataPtr;
