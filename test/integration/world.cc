@@ -19,7 +19,8 @@
 #include "gazebo/physics/physics.hh"
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class WorldTest : public ServerFixture,
                   public testing::WithParamInterface<const char*>
 {
@@ -618,6 +619,7 @@ TEST_F(WorldTest, URI)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, WorldTest, PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

@@ -19,8 +19,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "gazebo/msgs/msgs.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class WindTest : public ServerFixture
 {
   /// \brief Callback for gztopic "~/response".
@@ -211,6 +211,7 @@ void WindTest::WindSetLinearVelFunc()
 TEST_F(WindTest, WindSetLinearVelFunc)
 {
   WindSetLinearVelFunc();
+}
 }
 
 int main(int argc, char **argv)

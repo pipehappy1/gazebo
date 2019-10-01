@@ -19,8 +19,8 @@
 #include "gazebo/physics/physics.hh"
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class Issue624Test : public ServerFixture,
                      public testing::WithParamInterface<const char*>
 {
@@ -133,6 +133,7 @@ TEST_P(Issue624Test, CollisionWorldPose)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, Issue624Test, PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 /// Main

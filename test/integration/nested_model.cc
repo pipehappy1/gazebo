@@ -25,8 +25,8 @@
 #include "gazebo/test/helper_physics_generator.hh"
 
 #define PHYSICS_TOL 1e-2
-using namespace gazebo;
-
+namespace gazebo
+{
 class PhysicsMsgsTest : public ServerFixture,
                         public testing::WithParamInterface<const char*>
 {
@@ -357,6 +357,7 @@ TEST_P(PhysicsMsgsTest, SpawnNestedModel)
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, PhysicsMsgsTest,
                         PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

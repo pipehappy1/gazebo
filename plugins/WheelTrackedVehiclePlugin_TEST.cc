@@ -21,8 +21,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "test/util.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class WheelTrackedVehiclePluginTest : public ServerFixture
 {
   public: explicit WheelTrackedVehiclePluginTest(
@@ -527,6 +527,7 @@ TEST_P(WheelTrackedVehiclePluginTestParametrized,
 INSTANTIATE_TEST_CASE_P(PhysicsEngines,
                         WheelTrackedVehiclePluginTestParametrized,
                         PHYSICS_ENGINE_VALUES);
+}
 
 int main(int argc, char **argv)
 {

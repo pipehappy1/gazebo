@@ -27,8 +27,8 @@
 
 #include "test/util.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 const double g_tolerance = 1e-4;
 
 class PhysicsLinkTest : public ServerFixture,
@@ -856,6 +856,7 @@ TEST_P(PhysicsLinkTest, SetVelocity)
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, PhysicsLinkTest,
                         PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

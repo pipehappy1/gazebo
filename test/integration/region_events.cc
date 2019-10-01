@@ -20,12 +20,12 @@
 
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
 // certain tests fail (with the simbody engine
 // setting this to true skips those tests
 bool SKIP_FAILING_TESTS = true;
 
+namespace gazebo
+{
 // this is the test fixture
 class RegionEventTest
     : public ServerFixture, public testing::WithParamInterface<const char*>
@@ -205,6 +205,7 @@ TEST_P(RegionEventTest, ModelLeavingRegion)
 
 // Run all test cases
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, RegionEventTest, PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

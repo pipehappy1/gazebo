@@ -25,9 +25,10 @@
 #include "gazebo/msgs/msgs.hh"
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
-using namespace physics;
-
+namespace gazebo
+{
+namespace physics
+{
 class BulletPhysics_TEST : public ServerFixture
 {
   public: void PhysicsMsgParam();
@@ -257,6 +258,8 @@ void BulletPhysics_TEST::PhysicsMsgParam()
 TEST_F(BulletPhysics_TEST, PhysicsMsgParam)
 {
   PhysicsMsgParam();
+}
+}
 }
 
 /////////////////////////////////////////////////

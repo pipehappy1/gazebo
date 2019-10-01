@@ -24,7 +24,8 @@
 #include "gazebo/test/helper_physics_generator.hh"
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class MisalignmentPluginTest : public ServerFixture
 {
   /// \brief gtest calls this before running a test
@@ -134,6 +135,7 @@ TEST_F(MisalignmentPluginTest, CompareAlignments)
   }
 
   EXPECT_EQ(firstPose, secondPose);
+}
 }
 
 

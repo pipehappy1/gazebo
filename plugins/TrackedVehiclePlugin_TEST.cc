@@ -19,8 +19,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "test/util.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class TrackedVehiclePluginTest : public ServerFixture
 {
   public: TrackedVehiclePluginTest()
@@ -251,6 +251,7 @@ TEST_F(TrackedVehiclePluginTest, ResetAndTrackVelocityPublishersWork)
 
   EXPECT_DOUBLE_EQ(plugin.lastTracksVelMsg.x(), 0.0);
   EXPECT_DOUBLE_EQ(plugin.lastTracksVelMsg.y(), 0.0);
+}
 }
 
 int main(int argc, char **argv)

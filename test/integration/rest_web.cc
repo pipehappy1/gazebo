@@ -22,8 +22,8 @@
 
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 // certain tests fail (with the symbody engine
 // setting this to true skips those tests
 bool SKIP_FAILING_TESTS = true;
@@ -145,6 +145,7 @@ void RestWebTest::FirstTest(const std::string &_physicsEngine)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, RestWebTest, PHYSICS_ENGINE_VALUES);
+}
 
 // main, where we can specify to skip certain tests
 int main(int argc, char **argv)

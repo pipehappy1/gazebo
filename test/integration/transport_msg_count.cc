@@ -23,8 +23,8 @@
 
 #include <thread>
 
-using namespace gazebo;
-
+namespace gazebo
+{
 /**
  * \brief Test class for gtest which forks into parent and child process
  */
@@ -257,4 +257,5 @@ TEST_F(TransportMsgCountTest, MsgCount)
 
   ASSERT_EQ(g_receivedPosesStamped, numMsgs)
     << "Have not received all messages.";
+}
 }

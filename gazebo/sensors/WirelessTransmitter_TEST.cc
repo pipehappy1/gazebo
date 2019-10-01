@@ -18,7 +18,8 @@
 #include <gtest/gtest.h>
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class WirelessTransmitter_TEST : public ServerFixture
 {
     public: WirelessTransmitter_TEST();
@@ -264,6 +265,7 @@ TEST_F(WirelessTransmitter_TEST, TestUpdateImpl)
 TEST_F(WirelessTransmitter_TEST, TestUpdateImplNoVisual)
 {
   TestUpdateImplNoVisual();
+}
 }
 
 /////////////////////////////////////////////////

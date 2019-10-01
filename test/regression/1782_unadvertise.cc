@@ -17,8 +17,8 @@
 
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class Issue1782Test : public ServerFixture
 {
 };
@@ -97,6 +97,7 @@ TEST_F(Issue1782Test, Unadvertise)
     sleep++;
   }
   EXPECT_TRUE(topics.empty());
+}
 }
 
 /////////////////////////////////////////////////

@@ -22,7 +22,9 @@
 #include "gazebo/common/Exception.hh"
 #include "test/util.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
+//////////////////////////////////////////////////
 
 class MsgsTest : public gazebo::testing::AutoLogFixture { };
 
@@ -3931,4 +3933,5 @@ TEST_F(MsgsTest, ConvertIgnMsgMaterial)
   EXPECT_DOUBLE_EQ(ignMsg.ambient().b(), ignMsg2.ambient().b());
   EXPECT_DOUBLE_EQ(ignMsg.ambient().a(), ignMsg2.ambient().a());
   EXPECT_EQ(ignMsg.lighting(), ignMsg2.lighting());
+}
 }

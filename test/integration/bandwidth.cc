@@ -18,8 +18,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class BandwidthTest : public ServerFixture,
                       public testing::WithParamInterface<const char*>
 {
@@ -96,6 +96,7 @@ TEST_P(BandwidthTest, Bandwidth)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, BandwidthTest, PHYSICS_ENGINE_VALUES);
+}
 
 int main(int argc, char **argv)
 {

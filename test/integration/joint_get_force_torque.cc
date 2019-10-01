@@ -22,8 +22,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class JointGetForceTorqueTest : public ServerFixture,
                                 public testing::WithParamInterface<const char *>
 {
@@ -360,6 +360,7 @@ TEST_P(JointGetForceTorqueTest, GetForceTorqueDemo)
 /////////////////////////////////////////////////
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, JointGetForceTorqueTest,
                         PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

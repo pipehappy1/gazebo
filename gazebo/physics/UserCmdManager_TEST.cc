@@ -21,8 +21,8 @@
 #include "gazebo/test/helper_physics_generator.hh"
 #include "gazebo/physics/UserCmdManager.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 /////////////////////////////////////////////////
 class UserCmdManagerTest : public ServerFixture
 {
@@ -59,6 +59,7 @@ TEST_F(UserCmdManagerTest, CreateCmd)
   cmd = NULL;
   delete manager;
   manager = NULL;
+}
 }
 
 int main(int argc, char **argv)

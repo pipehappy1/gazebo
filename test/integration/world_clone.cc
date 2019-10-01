@@ -19,7 +19,8 @@
 #include "gazebo/physics/physics.hh"
 #include "gazebo/transport/transport.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class WorldClone : public ServerFixture
 {
 };
@@ -247,6 +248,7 @@ TEST_F(WorldClone, Clone)
   std::string result = custom_exec_str("kill -15 " + pid);
   if (result == "ERROR")
     FAIL() << "Fail to run kill -15 command";
+}
 }
 
 /////////////////////////////////////////////////

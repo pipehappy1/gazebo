@@ -25,7 +25,8 @@
 
 #define TOL 1e-4
 
-using namespace gazebo;
+namespace gazebo
+{
 class ContactSensor : public ServerFixture,
                       public testing::WithParamInterface<const char*>
 {
@@ -684,6 +685,7 @@ TEST_P(ContactSensor, TorqueTest)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, ContactSensor, PHYSICS_ENGINE_VALUES);
+}
 
 int main(int argc, char **argv)
 {

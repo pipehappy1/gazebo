@@ -20,8 +20,8 @@
 #endif
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class TransportTest : public ServerFixture
 {
 };
@@ -786,6 +786,7 @@ TEST_F(TransportTest, TryInit)
 
   // The namespace of the Node should match the name of the world that we loaded
   EXPECT_EQ(physics::get_world()->Name(), node->GetTopicNamespace());
+}
 }
 
 /////////////////////////////////////////////////

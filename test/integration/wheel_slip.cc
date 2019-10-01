@@ -21,8 +21,8 @@
 
 #include "test_config.h"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class WheelSlipTest : public ServerFixture
 {
   /// \brief Class to hold parameters for tire tests.
@@ -609,6 +609,7 @@ TEST_F(WheelSlipTest, TricyclesUphill)
     EXPECT_NEAR(noSlipLinearSpeed - model->WorldLinearVel().X(),
                 noSlipLinearSpeed * modelSlip.second * forceRatio, 5e-3);
   }
+}
 }
 
 /////////////////////////////////////////////////

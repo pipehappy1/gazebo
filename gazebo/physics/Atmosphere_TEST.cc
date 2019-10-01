@@ -18,8 +18,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "gazebo/msgs/msgs.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class AtmosphereTest : public ServerFixture,
                        public testing::WithParamInterface<const char*>
 {
@@ -160,6 +160,7 @@ TEST_P(AtmosphereTest, AtmosphereParamBool)
 
 INSTANTIATE_TEST_CASE_P(Atmospheres, AtmosphereTest,
                         ::testing::Values("adiabatic"));
+}
 
 int main(int argc, char **argv)
 {

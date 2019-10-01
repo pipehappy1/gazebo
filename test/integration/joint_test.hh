@@ -30,8 +30,8 @@
 #include "gazebo/msgs/msgs.hh"
 #include "gazebo/physics/physics.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 typedef std::tr1::tuple<const char *, const char *> std_string2;
 
 class JointTest : public ServerFixture,
@@ -238,4 +238,5 @@ class JointTest : public ServerFixture,
   /// \brief Joint type for test.
   protected: std::string jointType;
 };
+}
 #endif

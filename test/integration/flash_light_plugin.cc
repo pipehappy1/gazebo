@@ -25,8 +25,8 @@
 
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 // Information to record for the lights in the enviornment.
 // duration: The actual duration time of the flashlight.
 // interval: The actual interval time of the flashlight.
@@ -278,6 +278,7 @@ TEST_F(FlashLightPluginTest, multiBlockCheck)
 
   EXPECT_TRUE(this->FindColorInRec(ignition::math::Color::Green))
     << "Green is not found in the records." << std::endl;
+}
 }
 
 //////////////////////////////////////////////////

@@ -22,8 +22,8 @@
 
 const double g_physics_tol = 1e-2;
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class SurfaceTest : public ServerFixture,
                     public testing::WithParamInterface<const char*>
 {
@@ -255,6 +255,7 @@ TEST_P(SurfaceTest, CollideBitmask)
 
 INSTANTIATE_TEST_CASE_P(TestODE, SurfaceTest, ::testing::Values(
       "ode", "bullet"));
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

@@ -19,7 +19,8 @@
 #include "gazebo/common/Time.hh"
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class Pioneer2dx : public ServerFixture,
                    public testing::WithParamInterface<const char*>
 {
@@ -95,6 +96,7 @@ TEST_P(Pioneer2dx, StraightLine)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, Pioneer2dx, PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

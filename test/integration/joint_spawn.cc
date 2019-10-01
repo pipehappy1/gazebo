@@ -24,8 +24,8 @@
 #define TOL 1e-6
 #define TOL_CONT 2.0
 
-using namespace gazebo;
-
+namespace gazebo
+{
 const double g_tolerance = 1e-4;
 
 class JointSpawningTest : public JointTest
@@ -537,6 +537,7 @@ INSTANTIATE_TEST_CASE_P(TestRuns, JointSpawningTest_RotationalWorld,
                   , "universal"
                   , "fixed"
                   , "ball")));
+}
 
 int main(int argc, char **argv)
 {

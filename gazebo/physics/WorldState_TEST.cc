@@ -21,8 +21,8 @@
 #include "gazebo/physics/World.hh"
 #include "gazebo/physics/WorldState.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class WorldStateTest : public ServerFixture { };
 
 //////////////////////////////////////////////////
@@ -357,4 +357,5 @@ TEST_F(WorldStateTest, Times)
   EXPECT_EQ(worldState.GetSimTime(), common::Time(1));
   EXPECT_EQ(worldState.GetWallTime(), common::Time(2));
   EXPECT_EQ(worldState.GetRealTime(), common::Time(3));
+}
 }

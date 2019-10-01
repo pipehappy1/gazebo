@@ -21,7 +21,8 @@
 #include "gazebo/common/SystemPaths.hh"
 
 
-using namespace gazebo;
+namespace gazebo
+{
 class FileHandling : public ServerFixture
 {
 };
@@ -76,6 +77,7 @@ TEST_F(FileHandling, Save)
 
   // Cleanup test directory.
   boost::filesystem::remove_all(paths->DefaultTestPath());
+}
 }
 
 int main(int argc, char **argv)

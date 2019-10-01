@@ -21,7 +21,8 @@
 #include "gazebo/common/Time.hh"
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class Sensor_TEST : public ServerFixture
 {
 };
@@ -205,6 +206,7 @@ TEST_F(Sensor_TEST, SetPose)
   sensors::Sensor sensor(gazebo::sensors::OTHER);
   sensor.SetPose(ignition::math::Pose3d(0, 1, 2, 3, 4, 5));
   EXPECT_EQ(sensor.Pose(), ignition::math::Pose3d(0, 1, 2, 3, 4, 5));
+}
 }
 
 /////////////////////////////////////////////////
