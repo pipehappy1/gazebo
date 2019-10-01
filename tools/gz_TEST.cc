@@ -462,7 +462,7 @@ TEST_F(gzTest, Model)
     boost::algorithm::trim(modelInfo);
 
     // Split the string into parts p.
-    auto p = common::split(modelInfo, " ");
+    auto p = gazebo::common::split(modelInfo, " ");
 
     // Make sure we have the right number of parts.
     // Don't ASSERT_EQ, because we need to run fini at end of test
