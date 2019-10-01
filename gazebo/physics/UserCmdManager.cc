@@ -31,8 +31,11 @@
 #include "gazebo/physics/UserCmdManagerPrivate.hh"
 #include "gazebo/physics/UserCmdManager.hh"
 
-using namespace gazebo;
-using namespace physics;
+namespace gazebo
+{
+namespace physics
+{
+/////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////
@@ -362,4 +365,6 @@ void UserCmdManager::PublishCurrentStats()
   }
 
   this->dataPtr->userCmdStatsPub->Publish(statsMsg);
+}
+}
 }

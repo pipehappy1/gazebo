@@ -29,8 +29,6 @@
 
 #include "gazebo/gazebo_config.h"
 
-using namespace gazebo;
-
 namespace gazebo
 {
   struct MasterPrivate
@@ -65,7 +63,6 @@ namespace gazebo
     /// \brief Mutex to protect msg bufferes.
     std::recursive_mutex msgsMutex;
   };
-}
 
 /////////////////////////////////////////////////
 Master::Master()
@@ -625,4 +622,5 @@ transport::ConnectionPtr Master::FindConnection(const std::string &_host,
   }
 
   return conn;
+}
 }

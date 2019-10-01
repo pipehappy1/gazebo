@@ -81,8 +81,11 @@
 #include "gazebo/rendering/OculusCamera.hh"
 #endif
 
-using namespace gazebo;
-using namespace rendering;
+namespace gazebo
+{
+namespace rendering
+{
+//////////////////////////////////////////////////
 
 uint32_t ScenePrivate::idCounter = 0;
 
@@ -3681,4 +3684,6 @@ void Scene::EnableVisualizations(const bool _enable)
 bool Scene::EnableVisualizations() const
 {
   return this->dataPtr->enableVisualizations;
+}
+}
 }

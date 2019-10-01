@@ -50,8 +50,11 @@
 #include "gazebo/rendering/VisualPrivate.hh"
 #include "gazebo/rendering/WireBox.hh"
 
-using namespace gazebo;
-using namespace rendering;
+namespace gazebo
+{
+namespace rendering
+{
+//////////////////////////////////////////////////
 
 // Note: The value of ignition::math::MAX_UI32 is reserved as a flag.
 uint32_t VisualPrivate::visualIdCount = ignition::math::MAX_UI32 - 1;
@@ -3729,4 +3732,6 @@ void Visual::FillMaterialMsg(ignition::msgs::Material &_msg) const
       _msg.set_shader_type(ignition::msgs::Material::NORMAL_MAP_TANGENT_SPACE);
   else if (!this->GetShaderType().empty())
     gzerr << "Unrecognized shader type[" << this->GetShaderType() << "]\n";
+}
+}
 }

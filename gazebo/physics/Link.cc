@@ -121,8 +121,11 @@ class gazebo::physics::LinkPrivate
 #endif
 };
 
-using namespace gazebo;
-using namespace physics;
+namespace gazebo
+{
+namespace physics
+{
+//////////////////////////////////////////////////
 
 //////////////////////////////////////////////////
 Link::Link(EntityPtr _parent)
@@ -1921,4 +1924,6 @@ void Link::LoadLight(sdf::ElementPtr _sdf)
 const Link::Visuals_M &Link::Visuals() const
 {
   return this->visuals;
+}
+}
 }

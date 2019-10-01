@@ -37,8 +37,11 @@
 
 #include "gazebo/util/IntrospectionManager.hh"
 
-using namespace gazebo;
-using namespace physics;
+namespace gazebo
+{
+namespace physics
+{
+//////////////////////////////////////////////////
 
 sdf::ElementPtr Joint::sdfJoint;
 
@@ -1495,4 +1498,5 @@ void Joint::RegisterIntrospectionVelocity(const unsigned int _index)
   gazebo::util::IntrospectionManager::Instance()->Register
       <double>(uri.Str(), f);
 }
-
+}
+}

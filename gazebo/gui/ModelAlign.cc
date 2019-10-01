@@ -39,8 +39,11 @@
 #include "gazebo/gui/ModelAlignPrivate.hh"
 #include "gazebo/gui/ModelAlign.hh"
 
-using namespace gazebo;
-using namespace gui;
+namespace gazebo
+{
+namespace gui
+{
+/////////////////////////////////////////////////
 
 /////////////////////////////////////////////////
 ModelAlign::ModelAlign()
@@ -368,4 +371,6 @@ void ModelAlign::SetHighlighted(const rendering::VisualPtr &_vis,
       _vis->SetTransparency(std::abs(_vis->GetTransparency()*2.0-1.0));
     }
   }
+}
+}
 }

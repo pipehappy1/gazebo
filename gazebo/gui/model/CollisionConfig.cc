@@ -19,8 +19,11 @@
 #include "gazebo/gui/ConfigWidget.hh"
 #include "gazebo/gui/model/CollisionConfig.hh"
 
-using namespace gazebo;
-using namespace gui;
+namespace gazebo
+{
+namespace gui
+{
+/////////////////////////////////////////////////
 
 /////////////////////////////////////////////////
 CollisionConfig::CollisionConfig()
@@ -580,4 +583,6 @@ void CollisionConfigData::RestoreOriginalData()
   this->configWidget->blockSignals(true);
   this->configWidget->UpdateFromMsg(collisionPtr.get());
   this->configWidget->blockSignals(false);
+}
+}
 }

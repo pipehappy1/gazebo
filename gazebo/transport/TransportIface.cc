@@ -32,7 +32,14 @@
 #include "gazebo/transport/ConnectionManager.hh"
 #include "gazebo/transport/TransportIface.hh"
 
-using namespace gazebo;
+/////////////////////////////////////////////////
+void dummy_callback_fn(uint32_t)
+{
+}
+
+namespace gazebo
+{
+/////////////////////////////////////////////////
 
 boost::thread *g_runThread = NULL;
 std::condition_variable g_responseCondition;
@@ -42,11 +49,6 @@ bool g_minimalComms = false;
 
 std::list<msgs::Request *> g_requests;
 std::list<boost::shared_ptr<msgs::Response> > g_responses;
-
-/////////////////////////////////////////////////
-void dummy_callback_fn(uint32_t)
-{
-}
 
 /////////////////////////////////////////////////
 bool transport::get_master_uri(std::string &_masterHost,
@@ -452,4 +454,5 @@ bool transport::waitForNamespaces(const gazebo::common::Time &_maxWait)
   }
 
   return !namespaces.empty();
+}
 }
