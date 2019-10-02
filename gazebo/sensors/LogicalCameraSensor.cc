@@ -29,10 +29,13 @@
 #include "gazebo/sensors/LogicalCameraSensorPrivate.hh"
 #include "gazebo/sensors/LogicalCameraSensor.hh"
 
-using namespace gazebo;
-using namespace sensors;
-
 GZ_REGISTER_STATIC_SENSOR("logical_camera", LogicalCameraSensor)
+
+namespace gazebo
+{
+namespace sensors
+{
+//////////////////////////////////////////////////
 
 //////////////////////////////////////////////////
 LogicalCameraSensor::LogicalCameraSensor()
@@ -206,4 +209,6 @@ msgs::LogicalCameraImage LogicalCameraSensor::Image() const
 {
   std::lock_guard<std::mutex> lock(this->dataPtr->mutex);
   return this->dataPtr->msg;
+}
+}
 }

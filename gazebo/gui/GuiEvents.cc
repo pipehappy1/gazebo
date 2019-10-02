@@ -17,8 +17,11 @@
 
 #include "gazebo/gui/GuiEvents.hh"
 
-using namespace gazebo;
-using namespace gui;
+namespace gazebo
+{
+namespace gui
+{
+//////////////////////////////////////////////////
 
 event::EventT<void (std::string, std::string)> Events::createEntity;
 event::EventT<void (bool)> Events::moveMode;
@@ -42,3 +45,5 @@ event::EventT<void (const std::string &, const ignition::math::Vector3d &)>
     Events::scaleEntity;
 event::EventT<void (const std::string &, const ignition::math::Pose3d &,
     const bool)> Events::moveEntity;
+}
+}

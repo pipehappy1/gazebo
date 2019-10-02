@@ -25,8 +25,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 //////////////////////////////////////////////////
 class SavingLoadingTest : public ServerFixture,
                     public testing::WithParamInterface<const char*>
@@ -251,6 +251,7 @@ TEST_P(SavingLoadingTest, LoadScaledModels)
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, SavingLoadingTest,
                         PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

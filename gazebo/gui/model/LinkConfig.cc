@@ -19,8 +19,11 @@
 #include "gazebo/gui/ConfigWidget.hh"
 #include "gazebo/gui/model/LinkConfig.hh"
 
-using namespace gazebo;
-using namespace gui;
+namespace gazebo
+{
+namespace gui
+{
+/////////////////////////////////////////////////
 
 /////////////////////////////////////////////////
 LinkConfig::LinkConfig()
@@ -186,5 +189,5 @@ double LinkConfig::Density() const
 {
   return this->configWidget->DensityWidgetValue("density");
 }
-
-
+}
+}

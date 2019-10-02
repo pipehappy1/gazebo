@@ -21,8 +21,11 @@
 #include "gazebo/gui/model/ModelPluginInspector.hh"
 #include "gazebo/gui/model/ModelPluginInspectorPrivate.hh"
 
-using namespace gazebo;
-using namespace gui;
+namespace gazebo
+{
+namespace gui
+{
+/////////////////////////////////////////////////
 
 /////////////////////////////////////////////////
 ModelPluginInspector::ModelPluginInspector(QWidget *_parent)
@@ -180,4 +183,6 @@ msgs::Plugin *ModelPluginInspector::Data() const
     return NULL;
   }
   return msg;
+}
+}
 }

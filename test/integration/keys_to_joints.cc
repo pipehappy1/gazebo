@@ -20,7 +20,8 @@
 #include "gazebo/test/helper_physics_generator.hh"
 #include "gazebo/transport/Publisher.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class KeysToJoints : public ServerFixture,
                 public testing::WithParamInterface<const char*>
 {
@@ -294,6 +295,7 @@ TEST_P(KeysToJoints, MultipleJoints)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, KeysToJoints, PHYSICS_ENGINE_VALUES);
+}
 
 int main(int argc, char **argv)
 {

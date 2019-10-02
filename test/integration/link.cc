@@ -19,7 +19,8 @@
 
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class LinkTest : public ServerFixture
 {
 };
@@ -89,6 +90,7 @@ TEST_F(LinkTest, StaticWrench)
     sleep++;
   }
   EXPECT_EQ(model0->WorldPose(), model0Initial);
+}
 }
 
 int main(int argc, char **argv)

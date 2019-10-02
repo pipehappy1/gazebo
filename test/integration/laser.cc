@@ -27,7 +27,8 @@
 #define LASER_TOL 1e-5
 #define DOUBLE_TOL 1e-6
 
-using namespace gazebo;
+namespace gazebo
+{
 class LaserTest : public ServerFixture,
                   public testing::WithParamInterface<const char*>
 {
@@ -609,6 +610,7 @@ TEST_P(LaserTest, LaserNoise)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, LaserTest, PHYSICS_ENGINE_VALUES);
+}
 
 int main(int argc, char **argv)
 {

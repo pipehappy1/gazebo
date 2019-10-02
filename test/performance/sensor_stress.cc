@@ -20,7 +20,8 @@
 #include "gazebo/common/Time.hh"
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class SensorStress_TEST : public ServerFixture
 {
 };
@@ -98,6 +99,7 @@ TEST_F(SensorStress_TEST, ResetWorldStressTest)
     gzdbg << "counted " << g_hokuyoMsgCount << " hokuyo messages\n";
     common::Time::MSleep(200);
   }
+}
 }
 
 /////////////////////////////////////////////////

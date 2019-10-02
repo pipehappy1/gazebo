@@ -19,7 +19,9 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "RAMLibrary.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
+/////////////////////////////////////////////////
 
 class TransportStressTest : public ServerFixture
 {
@@ -234,6 +236,7 @@ TEST_F(TransportStressTest, ManyNodes)
     << receiveDiff << std::endl;
 
   delete [] fakeData;
+}
 }
 
 /////////////////////////////////////////////////

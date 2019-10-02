@@ -90,8 +90,11 @@
 #include "gazebo/physics/ContactManager.hh"
 #include "gazebo/physics/Population.hh"
 
-using namespace gazebo;
-using namespace physics;
+namespace gazebo
+{
+namespace physics
+{
+//////////////////////////////////////////////////
 
 /// \brief Flag used to say if/when to clear all models.
 /// This will be replaced with a class member variable in Gazebo 3.0
@@ -3152,4 +3155,6 @@ bool World::PluginInfoService(const ignition::msgs::StringMsg &_req,
       << std::endl;
 
   return false;
+}
+}
 }

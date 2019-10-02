@@ -24,7 +24,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "test_config.h"
 
-using namespace gazebo;
+namespace gazebo
+{
 class Issue602Test : public ServerFixture
 {
   /// \brief Test for Unsubscribe before delete subscriber.
@@ -75,7 +76,7 @@ void Issue602Test::UnsubscribeTest()
 
   // Sleep to ensure transport topics are all advertised
   common::Time::MSleep(100);
-  auto topics = transport::getAdvertisedTopics("gazebo.msgs.Contacts");
+  auto topics = gazebo::transport::getAdvertisedTopics("gazebo.msgs.Contacts");
   EXPECT_FALSE(topics.empty());
   EXPECT_GE(topics.size(), 4u);
 
@@ -94,6 +95,7 @@ void Issue602Test::UnsubscribeTest()
     sub->Unsubscribe();
     common::Time::MSleep(steps);
   }
+}
 }
 
 /////////////////////////////////////////////////

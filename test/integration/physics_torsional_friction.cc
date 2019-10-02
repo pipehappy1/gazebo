@@ -24,8 +24,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 const double g_friction_tolerance = 1e-3;
 
 class PhysicsTorsionalFrictionTest : public ServerFixture,
@@ -498,6 +498,7 @@ TEST_P(PhysicsTorsionalFrictionTest, DepthTest)
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, PhysicsTorsionalFrictionTest,
                         PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

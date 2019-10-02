@@ -19,8 +19,8 @@
 #include "gazebo/test/helper_physics_generator.hh"
 #include "gazebo/msgs/msgs.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class PhysicsEngineTest : public ServerFixture,
                           public testing::WithParamInterface<const char*>
 {
@@ -226,6 +226,7 @@ TEST_P(PhysicsEngineTest, PhysicsEngineGetParamBool)
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, PhysicsEngineTest,
                         PHYSICS_ENGINE_VALUES);
+}
 
 int main(int argc, char **argv)
 {

@@ -38,10 +38,13 @@
 #include "gazebo/sensors/ContactSensorPrivate.hh"
 #include "gazebo/sensors/ContactSensor.hh"
 
-using namespace gazebo;
-using namespace sensors;
-
 GZ_REGISTER_STATIC_SENSOR("contact", ContactSensor)
+
+namespace gazebo
+{
+namespace sensors
+{
+//////////////////////////////////////////////////
 
 //////////////////////////////////////////////////
 ContactSensor::ContactSensor()
@@ -323,4 +326,6 @@ bool ContactSensor::IsActive() const
   return this->active ||
     (this->dataPtr->contactsPub &&
      this->dataPtr->contactsPub->HasConnections());
+}
+}
 }

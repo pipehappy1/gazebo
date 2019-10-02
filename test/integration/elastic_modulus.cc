@@ -30,8 +30,8 @@
 
 #define PHYSICS_TOL 0.008
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class PhysicsTest : public ServerFixture,
                     public testing::WithParamInterface<const char*>
 {
@@ -231,6 +231,7 @@ TEST_P(PhysicsTest, ElasticModulusContact)
 
 /////////////////////////////////////////////////
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, PhysicsTest, PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

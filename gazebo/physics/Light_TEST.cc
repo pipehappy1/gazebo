@@ -23,8 +23,8 @@
 #include "gazebo/physics/PhysicsTypes.hh"
 #include "gazebo/physics/Light.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class LightTest : public ServerFixture { };
 
 //////////////////////////////////////////////////
@@ -101,6 +101,7 @@ TEST_F(LightTest, LightMsg)
          newLightMsg.pose().orientation().z());
 
   EXPECT_EQ(lightMsg.type(), newLightMsg.type());
+}
 }
 
 int main(int argc, char **argv)

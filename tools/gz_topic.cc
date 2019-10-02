@@ -31,7 +31,9 @@
 
 #include "gz_topic.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
+/////////////////////////////////////////////////
 
 static std::string &EraseTrailingWhitespaces(std::string &_str)
 {
@@ -579,4 +581,5 @@ bool TopicCommand::Request(const std::string &_space,
 
   std::cerr << "No response received\n";
   return false;
+}
 }

@@ -20,8 +20,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "test/util.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class WorldTest : public ServerFixture {};
 
 //////////////////////////////////////////////////
@@ -213,6 +213,7 @@ TEST_F(WorldTest, Stop)
   // Run the world again
   world->Run();
   EXPECT_TRUE(world->Running());
+}
 }
 
 //////////////////////////////////////////////////

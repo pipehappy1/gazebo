@@ -21,8 +21,11 @@
 #include "gazebo/gui/ConfigWidget.hh"
 #include "gazebo/gui/model/VisualConfig.hh"
 
-using namespace gazebo;
-using namespace gui;
+namespace gazebo
+{
+namespace gui
+{
+/////////////////////////////////////////////////
 
 /////////////////////////////////////////////////
 VisualConfig::VisualConfig()
@@ -561,4 +564,6 @@ void VisualConfigData::RestoreOriginalData()
   this->configWidget->blockSignals(true);
   this->configWidget->UpdateFromMsg(visualPtr.get());
   this->configWidget->blockSignals(false);
+}
+}
 }

@@ -22,7 +22,9 @@
 #include "gazebo/common/common.hh"
 
 using namespace std;
-using namespace gazebo;
+namespace gazebo
+{
+/////////////////////////////////////////////////
 
 class ImageConvertStressTest : public ServerFixture
 {
@@ -60,6 +62,7 @@ TEST_F(ImageConvertStressTest, ManyConversions)
 
   // Without the fix in pull request #1057, the difference is over 470000
   EXPECT_LE(memAfter - memBefore, 2000);
+}
 }
 
 /////////////////////////////////////////////////

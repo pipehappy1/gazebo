@@ -25,8 +25,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "gazebo/transport/TransportTypes.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 /// \brief Features to check in each log file.
 /// The 1st element is the initial simulation time (frame #1).
 /// The 2nd element is the simulation time at frame #2.
@@ -302,6 +302,7 @@ INSTANTIATE_TEST_CASE_P(LogFiles,
                         ::testing::Values("state.log",
                                           "state2.log",
                                           "state3.log"));
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

@@ -35,10 +35,13 @@
 #include "gazebo/sensors/ImuSensorPrivate.hh"
 #include "gazebo/sensors/ImuSensor.hh"
 
-using namespace gazebo;
-using namespace sensors;
-
 GZ_REGISTER_STATIC_SENSOR("imu", ImuSensor)
+
+namespace gazebo
+{
+namespace sensors
+{
+//////////////////////////////////////////////////
 
 //////////////////////////////////////////////////
 ImuSensor::ImuSensor()
@@ -450,4 +453,6 @@ bool ImuSensor::IsActive() const
 {
   return this->active ||
          (this->dataPtr->pub && this->dataPtr->pub->HasConnections());
+}
+}
 }

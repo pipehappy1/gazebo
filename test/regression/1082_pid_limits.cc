@@ -24,7 +24,8 @@
 #include "gazebo/test/ServerFixture.hh"
 #include "test_config.h"
 
-using namespace gazebo;
+namespace gazebo
+{
 class Issue1082Test : public ServerFixture
 {
 };
@@ -111,6 +112,7 @@ TEST_F(Issue1082Test, PIDLimitsPosition)
 
   EXPECT_LT(diffDist, 0.002);
   EXPECT_GT(diffDist, -0.002);
+}
 }
 
 /////////////////////////////////////////////////

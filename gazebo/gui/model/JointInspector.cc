@@ -29,8 +29,11 @@
 
 #include "gazebo/rendering/Material.hh"
 
-using namespace gazebo;
-using namespace gui;
+namespace gazebo
+{
+namespace gui
+{
+/////////////////////////////////////////////////
 
 /////////////////////////////////////////////////
 JointInspector::JointInspector(JointMaker *_jointMaker, QWidget *_parent)
@@ -675,4 +678,6 @@ void JointInspector::keyPressEvent(QKeyEvent *_event)
 void JointInspector::closeEvent(QCloseEvent *_event)
 {
   _event->accept();
+}
+}
 }

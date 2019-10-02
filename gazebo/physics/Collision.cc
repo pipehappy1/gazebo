@@ -42,8 +42,11 @@
 #include "gazebo/physics/Link.hh"
 #include "gazebo/physics/Collision.hh"
 
-using namespace gazebo;
-using namespace physics;
+namespace gazebo
+{
+namespace physics
+{
+//////////////////////////////////////////////////
 
 // Class used to initialize an sdf element pointer from "collision.sdf".
 // This is then used in the Collision constructor to improve performance.
@@ -410,4 +413,6 @@ void Collision::SetWorldPoseDirty()
   // Tell the collision object that the next call to ::GetWorldPose should
   // compute a new worldPose value.
   this->worldPoseDirty = true;
+}
+}
 }

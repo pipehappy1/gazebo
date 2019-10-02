@@ -24,7 +24,8 @@
 #include "gazebo/test/helper_physics_generator.hh"
 #include "test/util.hh"
 
-using namespace gazebo;
+namespace gazebo
+{
 class Harness : public ServerFixture,
                 public ::testing::WithParamInterface<const char*>
 {
@@ -428,6 +429,7 @@ TEST_P(Harness, LowerStopRaise)
 }
 
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, Harness, PHYSICS_ENGINE_VALUES);
+}
 
 int main(int argc, char **argv)
 {

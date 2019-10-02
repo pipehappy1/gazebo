@@ -17,8 +17,8 @@
 
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class TrackedVehiclesTest : public ServerFixture
 {
   public: explicit TrackedVehiclesTest(const std::string &_worldFilename)
@@ -284,6 +284,7 @@ TEST_F(WheeledTrackedVehiclesTest, WheelTracked)
   EXPECT_NEAR(model->WorldPose().Rot().Pitch(), -0.4, 1e-1);
   EXPECT_NEAR(model->WorldPose().Rot().Yaw(),
               beforeStairsPose.Rot().Yaw(), 1e-1);
+}
 }
 
 int main(int argc, char **argv)

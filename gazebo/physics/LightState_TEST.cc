@@ -22,8 +22,8 @@
 #include "gazebo/physics/Light.hh"
 #include "gazebo/physics/LightState.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class LightStateTest : public ServerFixture { };
 
 //////////////////////////////////////////////////
@@ -233,6 +233,7 @@ TEST_F(LightStateTest, Print)
   EXPECT_STREQ(strOut.str().c_str(),
       "<light name='light_0'><pose>1.000 2.000 3.000 0.100 0.200 0.300 "\
       "</pose></light>");
+}
 }
 
 int main(int argc, char **argv)

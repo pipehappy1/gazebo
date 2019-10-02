@@ -21,12 +21,12 @@
 
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
 // certain tests fail (with the symbody engine
 // setting this to true skips those tests
 bool SKIP_FAILING_TESTS = true;
 
+namespace gazebo
+{
 // this is the test fixture
 class SimEventsTest : public ServerFixture,
                       public testing::WithParamInterface<const char*>
@@ -298,6 +298,7 @@ TEST_P(SimEventsTest, ModelInAnOutOfRegion)
 TEST_P(SimEventsTest, OccupiedEventSource)
 {
   OccupiedEventSource(GetParam());
+}
 }
 
 // main, where we can specify to skip certain tests

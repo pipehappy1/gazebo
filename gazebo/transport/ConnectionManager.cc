@@ -30,8 +30,11 @@
 
 #include "gazebo/gazebo_config.h"
 
-using namespace gazebo;
-using namespace transport;
+namespace gazebo
+{
+namespace transport
+{
+//////////////////////////////////////////////////
 
 /// TBB task to process nodes.
 class TopicManagerProcessTask : public tbb::task
@@ -704,4 +707,6 @@ ConnectionPtr ConnectionManager::FindConnection(const std::string &_host,
 void ConnectionManager::TriggerUpdate()
 {
   this->updateCondition.notify_all();
+}
+}
 }

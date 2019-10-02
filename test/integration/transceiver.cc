@@ -23,8 +23,8 @@
 #include "gazebo/common/common.hh"
 #include "gazebo/test/helper_physics_generator.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 class TransceiverTest : public ServerFixture,
                         public testing::WithParamInterface<const char*>
 {
@@ -422,6 +422,7 @@ TEST_P(TransceiverTest, FreqOutOfBounds)
 /////////////////////////////////////////////////
 INSTANTIATE_TEST_CASE_P(PhysicsEngines, TransceiverTest,
                         PHYSICS_ENGINE_VALUES);
+}
 
 /////////////////////////////////////////////////
 int main(int argc, char **argv)

@@ -23,9 +23,10 @@
 #include "gazebo/physics/ode/ODETypes.hh"
 #include "gazebo/test/ServerFixture.hh"
 
-using namespace gazebo;
-using namespace physics;
-
+namespace gazebo
+{
+namespace physics
+{
 class ODEPhysics_TEST : public ServerFixture
 {
   public: void PhysicsMsgParam();
@@ -480,6 +481,8 @@ void ODEPhysics_TEST::PhysicsMsgParam()
 TEST_F(ODEPhysics_TEST, PhysicsMsgParam)
 {
   PhysicsMsgParam();
+}
+}
 }
 
 /////////////////////////////////////////////////

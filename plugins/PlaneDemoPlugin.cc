@@ -55,7 +55,7 @@ struct JointControl
   public: int decKey;
 
   /// \brief PID controller
-  public: common::PID pid;
+  public: gazebo::common::PID pid;
 };
 
 /// \brief Engine torque controller
@@ -143,7 +143,7 @@ class gazebo::PlaneDemoPluginPrivate
   public: std::vector<JointControl> jointControls;
 
   /// \brief Last update sim time
-  public: common::Time lastUpdateTime;
+  public: gazebo::common::Time lastUpdateTime;
 
   /// \brief Mutex to protect updates
   public: std::mutex mutex;
@@ -367,7 +367,7 @@ void PlaneDemoPlugin::OnUpdate()
   // gzdbg << "executing OnUpdate.\n";
   {
     std::lock_guard<std::mutex> lock(this->dataPtr->mutex);
-    common::Time curTime = this->dataPtr->world->SimTime();
+    gazebo::common::Time curTime = this->dataPtr->world->SimTime();
     for (std::vector<EngineControl>::iterator ei =
         this->dataPtr->engineControls.begin();
         ei != this->dataPtr->engineControls.end(); ++ei)
