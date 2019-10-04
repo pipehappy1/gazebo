@@ -28,8 +28,8 @@
 
 #include "model_move.hh"
 
-using namespace gazebo;
-
+namespace gazebo
+{
 // Register this plugin with the simulator
 GZ_REGISTER_MODEL_PLUGIN(ModelMove);
 
@@ -178,4 +178,5 @@ void ModelMove::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
       pathTopicName, &ModelMove::OnPathMsg, this);
   gzmsg << "[model_move] Subscribed to receive paths in: "<< pathTopicName
         << std::endl;
+}
 }

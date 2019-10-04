@@ -28,26 +28,26 @@ using namespace gazebo;
 
 int main(int _argc, char *_argv[])
 {
-  msgs::PoseAnimation msg;
+  gazebo::msgs::PoseAnimation msg;
 
   msg.set_model_name("box");
-  msgs::Pose *p = msg.add_pose();
-  msgs::Set(p, ignition::math::Pose3d(5, 5, 0, 0, 0, 0));
+  gazebo::msgs::Pose *p = msg.add_pose();
+  gazebo::msgs::Set(p, ignition::math::Pose3d(5, 5, 0, 0, 0, 0));
   p = msg.add_pose();
-  msgs::Set(p, ignition::math::Pose3d(5, -5, 0, 0, 0, 0));
+  gazebo::msgs::Set(p, ignition::math::Pose3d(5, -5, 0, 0, 0, 0));
   p = msg.add_pose();
-  msgs::Set(p, ignition::math::Pose3d(0, 0, 0, 0, 0, 0));
+  gazebo::msgs::Set(p, ignition::math::Pose3d(0, 0, 0, 0, 0, 0));
 
-  transport::init();
-  transport::run();
-  transport::NodePtr node(new gazebo::transport::Node());
+  gazebo::transport::init();
+  gazebo::transport::run();
+  gazebo::transport::NodePtr node(new gazebo::transport::Node());
   node->Init("default");
 
   // modelmove_world is the name of the testing world
   const std::string topicName = "/gazebo/modelmove_world/" + msg.model_name()
     + "/model_move";
   gazebo::transport::PublisherPtr pathPub =
-    node->Advertise<msgs::PoseAnimation>(topicName);
+    node->Advertise<gazebo::msgs::PoseAnimation>(topicName);
 
   std::cout << "Waiting for connection in " << topicName << std::endl;
   pathPub->WaitForConnection();
